@@ -505,8 +505,23 @@ void loop() {
   }
 }
 ```
+for more details : https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/
 
 
 ## Learning Antennas (Basics, Simulation, and Design)
+
+![WhatsApp Image 2024-07-10 at 14 46 40](https://github.com/Snita8/Cubesat-Project/assets/173747602/d2e82d9b-e603-4179-adbc-86560820acef)
+
+
+[2024-0703-Antenna.pdf](https://github.com/user-attachments/files/16158642/2024-0703-Antenna.pdf)
+
+
+
+##### Simulation using 4NECE2
+
+
+Download and install 4NEC2 from [here](http://www.qsl.net/4nec2/).
+
+
 
 
