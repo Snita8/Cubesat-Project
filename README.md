@@ -1,3 +1,6 @@
+
+![WhatsApp GIF 2024-07-10 at 19 51 30](https://github.com/Snita8/Cubesat-Project/assets/173747602/97d2f2c5-ab83-4b52-8983-9048ef419886)
+
 # Cubesat-Project 🛰️📡
 
 
@@ -173,7 +176,9 @@ void loop() {
   delay(1000);                      // Wait for a second
 }
 ```
-## Learning Basics of Communication Systems 
+
+
+## 📻 Learning Basics of Communication Systems 
 
 **Introduction to Communication Systems**
 
@@ -187,6 +192,7 @@ void loop() {
    - These signals represent data using continuous variations in amplitude, frequency, or phase.
 
 2. **Examples**:
+   
    - Audio signals (e.g., voice over a telephone line).
    - Video signals (e.g., analog TV broadcasts).
 
@@ -251,6 +257,10 @@ void loop() {
        Where \( Δf \) is the frequency deviation and \( m(t) \) is the information signal.
 
    - **Digital Modulation**:
+  
+![WhatsApp Image 2024-07-10 at 23 06 52](https://github.com/Snita8/Cubesat-Project/assets/173747602/deaf0714-3be7-4b39-b58d-5948878256f5)
+
+   
      - **Amplitude Shift Keying (ASK)**:
        ```text
        S(t) = A(t) * cos(2πf_ct)
@@ -350,6 +360,48 @@ Hands-On Projects: Build simple communication systems using microcontrollers and
 (DIGITAL COMMUNICATION)
 
 ![WhatsApp Image 2024-07-10 at 13 54 34](https://github.com/Snita8/Cubesat-Project/assets/173747602/c9c18002-f232-44a6-bd7d-6ed411e1adf7)
+
+#### Electromagnetic Spectrum :
+✶ *The electromagnetic spectrum encompasses all wavelengths of electromagnetic radiation, from radio waves to gamma rays.*
+
+
+For communication, different parts of the spectrum are used:
+
+Radio Waves: Used for wireless communication, including AM/FM radio, television, and mobile phones.
+
+Microwaves: Used for satellite communication, WiFi, and radar.
+
+Infrared: Used for remote controls and some communication systems.
+
+Visible Light: Not typically used for data communication.
+
+Ultraviolet, X-rays, Gamma Rays: Not used for communication due to their high energy and potential harm.
+
+
+#### Carrier Frequency Selection
+*Carrier frequency selection is crucial for avoiding interference and ensuring efficient communication.*
+
+ ##### Factors influencing the choice include:
+
+ ✶ Bandwidth Requirements: Higher frequencies typically allow for higher data rates.
+✶ Propagation Characteristics: Lower frequencies (below 30 MHz) can travel long distances and penetrate obstacles better than higher frequencies.
+✶ Regulations: Regulatory bodies allocate different frequency bands for specific uses to minimize interference.
+
+#### Satellite Orbital Fundamentals 
+*Satellite orbits are paths that satellites follow around the Earth.*
+
+##### Key concepts include:
+✶ Low Earth Orbit (LEO): 160 to 2,000 km above Earth. Used for Earth observation and some communication satellites.
+✶ Medium Earth Orbit (MEO): 2,000 to 35,786 km above Earth. Used for navigation satellites like GPS.
+✶ Geostationary Orbit (GEO): 35,786 km above Earth. Satellites here remain stationary relative to a point on Earth, used for communication and weather monitoring.
+✶ Inclination: The angle between the satellite's orbital plane and the equatorial plane.
+✶ Eccentricity: Describes the shape of the orbit; a measure of how much it deviates from a perfect circle.
+
+
+
+![WhatsApp Image 2024-07-10 at 20 02 35](https://github.com/Snita8/Cubesat-Project/assets/173747602/d1fa63f8-84ca-454f-8cab-a3353030c3af)
+
+
 
 
 ##  Learning LoRa Basics
@@ -523,6 +575,7 @@ for more details : https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-
 
 
 Download and install 4NEC2 from [here](http://www.qsl.net/4nec2/).
+
 
 
 
