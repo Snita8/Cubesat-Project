@@ -393,6 +393,40 @@ void loop() {
   delay(1000);
 }
 ```
+
+| Product Specifications | |
+|------------------------|--|
+| **Module Model** | Ra-02 |
+| **Package** | SMD-16 |
+| **Size** | 17*16 (3.2±0.1) mm |
+| **Interface** | SPI |
+| **Programmable bit rate** | UP to 300Kbps |
+| **Frequency Range** | 410-525 MHz |
+| **Antenna** | IPEX |
+| **Max Transmit Power** | 18±1 dBm |
+| **Power (Typical Values)** | |
+| **Power Supply** | 2.5~3.7V, Typical 3.3V |
+| **433MHz** | |
+| TX | 93mA |
+| RX | 12.15mA |
+| Standby | 1.6mA |
+| **470MHz** | |
+| TX | 97mA |
+| RX | 12.15mA |
+| Standby | 1.5mA |
+| **Operating Temperature** | -30℃~85℃ |
+| **Storage Environment** | -40℃~90℃, <90%RH |
+| **Weight** | 0.45g |
+
+| **Receive Sensitivity** | **Frequency** | **Spread Factor** | **SNR** | **Sensitivity** |
+|-------------------------|---------------|-------------------|---------|-----------------|
+| | 433MHz | 7 | -7 | -125 |
+| | 433MHz | 10 | -15 | -134 |
+| | 433MHz | 12 | -20 | -141 |
+| | 470MHz | 7 | -7 | -126 |
+| | 470MHz | 10 | -15 | -135 |
+| | 470MHz | 12 | -20 | -141 |
+
 ### Applications :
 
 Range Testing: Test the range of LoRa modules in various environments (urban, rural, indoors).
@@ -403,5 +437,76 @@ Projects: Build sensor nodes for environmental monitoring, smart agriculture, et
 
 ### Setting Up Hardware 
 
+##### Connection : Connect LoRa module to ESP32 via SPI.
+
+MISO -> GPIO1
+
+9MOSI -> GPIO27
+
+SCK -> GPIO5
+
+NSS -> GPIO18
+
+DIO0 -> GPIO26
+
+GND -> GND
+
+VCC -> 3.3V
+
+*Writing the Code
+
+Transmitter Code:
+```cpp
+#include <SPI.h>
+#include <LoRa.h>
+
+void setup() {
+  Serial.begin(115200);
+  while (!Serial);
+
+  if (!LoRa.begin(915E6)) {
+    Serial.println("Starting LoRa failed!");
+    while (1);
+  }
+}
+
+void loop() {
+  LoRa.beginPacket();
+  LoRa.print("Hello, LoRa!");
+  LoRa.endPacket();
+
+  delay(1000);
+}
+```
+Receiver Code :
+
+```cpp
+#include <SPI.h>
+#include <LoRa.h>
+
+void setup() {
+  Serial.begin(115200);
+  while (!Serial);
+
+  if (!LoRa.begin(915E6)) {
+    Serial.println("Starting LoRa failed!");
+    while (1);
+  }
+}
+
+void loop() {
+  int packetSize = LoRa.parsePacket();
+  if (packetSize) {
+    while (LoRa.available()) {
+      String incoming = LoRa.readString();
+      Serial.print("Received: ");
+      Serial.println(incoming);
+    }
+  }
+}
+```
+
+
+## Learning Antennas (Basics, Simulation, and Design)
 
 
