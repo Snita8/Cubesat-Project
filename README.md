@@ -1,4 +1,3 @@
-
 ![WhatsApp GIF 2024-07-10 at 19 51 30](https://github.com/Snita8/Cubesat-Project/assets/173747602/97d2f2c5-ab83-4b52-8983-9048ef419886)
 
 # Cubesat-Project 🛰️📡
@@ -65,6 +64,11 @@ In the Arduino IDE, select your ESP32  board model and the correct COM port unde
 
 ✶ write and upload a simple LED Blink Program :
 
+![WhatsApp GIF 2024-07-11 at 00 43 42](https://github.com/Snita8/Cubesat-Project/assets/173747602/694488c3-d8a5-41fa-8766-afc81cf83901)
+
+
+
+
 ```cpp
 
 void setup() {
@@ -80,6 +84,8 @@ void loop() {
 ```
 
 ✶ write and upload double LED Blink Program :
+
+![WhatsApp GIF 2024-07-11 at 00 40 29](https://github.com/Snita8/Cubesat-Project/assets/173747602/76809baa-3f62-4767-9ea7-07e67b0a2644)
 
 
 ```cpp
@@ -112,6 +118,11 @@ void loop() {
 ```
 
 ✶ write and upload multiple LED Blink program :
+
+![WhatsApp GIF 2024-07-11 at 00 34 59](https://github.com/Snita8/Cubesat-Project/assets/173747602/99ddce25-3adb-48e2-94c1-8919d9503590)
+
+
+
 
 ```cpp
   // Define the LED pins
@@ -174,6 +185,10 @@ void loop() {
 }
 ```
 ## OLED 
+
+![WhatsApp Image 2024-07-11 at 00 32 41](https://github.com/Snita8/Cubesat-Project/assets/173747602/b7d6f9bf-d757-477c-ada5-a8d88f582883)
+
+
 ```cpp
 #include<SPI.h>
 #include<Wire.h>
@@ -216,6 +231,10 @@ void loop() {
 }
 ```
 ## 1. DHT  sensor using serial monitor
+
+![WhatsApp Image 2024-07-11 at 00 29 09](https://github.com/Snita8/Cubesat-Project/assets/173747602/12d983dc-6e62-4b04-b174-234de6094166)
+
+
 ```cpp
 #include "DHT.h"
 #define DHT11PIN 23
@@ -237,10 +256,16 @@ void loop() {
   Serial.print(humi);
   delay(1000);
 }
-
 ```
 
+![WhatsApp Image 2024-07-11 at 00 28 58](https://github.com/Snita8/Cubesat-Project/assets/173747602/24ba2b02-48ae-4a00-9fc6-345781e9fd80)
+
+
+
 ## 2. DHT sensor using OLED
+
+![WhatsApp Image 2024-07-11 at 00 23 47](https://github.com/Snita8/Cubesat-Project/assets/173747602/71633aa4-b5df-4eac-a2a7-00d2455b7d91)
+
 
 ```cpp
 
