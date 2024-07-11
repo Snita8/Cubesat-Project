@@ -269,71 +269,75 @@ void loop() {
 
 ```cpp
 
-#include<Wire.h>
-#include<Adafruit_GFX.h>
-#include<Adafruit_SSD1306.h>
-#include<Adafruit_Sensor.h>
+
+  
+#include <Adafruit_Sensor.h>
 #include <DHT.h>
+#include <DHT_U.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 
-#define SCREEN_WIDTH 128 //128OLED DISPLAY WIDTH
+#define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-Adafruit_SSD1306 display(SCREEN_WIDTH,SCREEN_HEIGHT,&Wire,-1);
+#define DHTPIN 2     // Digital pin connected to the DHT sensor
+#define DHTTYPE DHT22   // DHT 22 (AM2302)
 
-#define DHT11PIN 5
+DHT dht(DHTPIN, DHTTYPE);
 
-#define DHTTYPE DHT11
-DHT dht(DHT11PIN, DHTTYPE);
-
-void setup(){
-  Serial.begin(9600);
-  dht.begin();
-
-  if(!display.begin(SSD1306_SWITCHCAPVCC,0X3C)){
+void setup() {
+  // Initialize the OLED display
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("SSD1306 allocation failed"));
-    for(;;);
+    for (;;);
   }
+  display.display();
+  delay(2000); // Pause for 2 seconds
+
+  display.clearDisplay();
+
+  // Initialize the DHT sensor
+  dht.begin();
+}
+
+void loop() {
+  // Reading temperature or humidity takes about 250 milliseconds!
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  // Check if any reads failed and exit early (to try again).
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
+
+  // Clear the buffer
+  display.clearDisplay();
+
+  // Display temperature
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0, 0);
+  display.print(F("Temperature: "));
+  display.print(temperature);
+  display.print(F(" *C"));
+
+  // Display humidity
+  display.setCursor(0, 10);
+  display.print(F("Humidity: "));
+  display.print(humidity);
+  display.print(F(" %"));
+
+  // Display all the information
+  display.display();
+
+  // Delay between updates
   delay(2000);
-  display.clearDisplay();
-  display.setTextColor(WHITE);
 }
-
-perature");
-display.setTextSize(2);
-display.setTextColor(SSD1306_BLACK,SSD1306_WHITE);
-display.setCursor(0,10);
-display.print(temp);
-display.print(" ");void loop(){
-  delay(5000);
-
-  float humi = dht.readHumidity();
-  float temp = dht.readTemperature();
-  if(isnan(humi)||isnan(temp)){
-    Serial.println("Failed to read from DHT sensor!");
-  }
-
-  display.clearDisplay();
-
-display.setTextSize(1);
-display.setTextColor(SSD1306_BLACK,SSD1306_WHITE);
-display.setCursor(0,0);
-display.print("temp");
-display.setTextSize(2);
-display.print("C");
-
-
-display.setTextSize(1);
-display.setTextColor(SSD1306_BLACK,SSD1306_WHITE);
-display.setCursor(0,35);
-display.print("HUMIDITY");
-display.setTextSize(2);
-display.setTextColor(SSD1306_BLACK,SSD1306_WHITE);
-display.setCursor(0,45);
-display.print(humi);
-display.print(" %");
-
-display.display();
-}
+  
 ```
 *Undertanding ESP32 Basics*
 
