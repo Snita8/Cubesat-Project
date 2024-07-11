@@ -1,0 +1,44 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+fs = 1000    # Sampling frequency (samples per second)
+T = 1 / fs   # Sampling period
+fc = 50      # Carrier frequency (Hz)
+bit_rate = 10  # Bit rate (bits per second)
+duration = 1  # Duration of the signal in seconds
+
+# Generate random binary data sequence
+np.random.seed(0)  # For reproducibility
+data_bits = np.random.randint(0, 2, int(bit_rate * duration))
+
+# Generate pseudo-random spreading code (PN sequence)
+spreading_code = np.random.choice([-1, 1], len(data_bits))
+
+# Modulate data using DSSS
+t = np.arange(0, len(data_bits) * T, T)
+carrier = np.sin(2 * np.pi * fc * t)
+data_modulated = carrier * np.repeat(spreading_code, int(fs / bit_rate))
+
+# Plotting
+plt.figure(figsize=(10, 6))
+
+plt.subplot(3, 1, 1)
+plt.stem(data_bits, use_line_collection=True)
+plt.title('Binary Data Sequence')
+plt.xlabel('Bit Index')
+plt.ylabel('Bit Value')
+plt.ylim([-0.5, 1.5])
+plt.grid(True)
+
+plt.subplot(3, 1, 2)
+plt.plot(t, carrier)
+plt.title('Carrier Signal')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.grid(True)
+
+plt.subplot(3, 1, 3)
+plt.plot(t, data_modulated)
+plt.title('DSSS Modulated Signal')
+plt
