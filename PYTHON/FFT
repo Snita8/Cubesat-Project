@@ -1,0 +1,30 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample data generation
+fs = 1000  # Sampling frequency
+t = np.linspace(0, 1, fs, endpoint=False)  # Time vector
+f1 = 50  # Frequency of the signal
+signal = np.sin(2 * np.pi * f1 * t)  # Sample sine wave signal
+
+# Compute FFT
+fft_result = np.fft.fft(signal)
+frequencies = np.fft.fftfreq(len(signal), 1/fs)  # Frequency bins
+
+# Plotting
+plt.figure(figsize=(10, 6))
+
+plt.subplot(2, 1, 1)
+plt.plot(t, signal)
+plt.title('Original Signal')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+
+plt.subplot(2, 1, 2)
+plt.plot(frequencies, np.abs(fft_result))
+plt.title('FFT of Signal')
+plt.xlabel('Frequency (Hz)')
+plt.ylabel('Magnitude')
+
+plt.tight_layout()
+plt.show()
