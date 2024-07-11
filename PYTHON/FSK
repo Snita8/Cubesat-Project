@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+Fs = 1000       # Sampling frequency
+T = 1/Fs        # Sampling period
+duration = 1    # Duration of the signal in seconds
+f0 = 50         # Frequency of the first tone (representing binary 0)
+f1 = 100        # Frequency of the second tone (representing binary 1)
+bit_rate = 10   # Bit rate (bits per second)
+bits = '1010101010'  # Binary data sequence
+
+# Time vector
+t = np.arange(0, duration, T)
+
+# Generate FSK signal
+fsk_signal = np.zeros(len(t))
+for i, bit in enumerate(bits):
+    frequency = f0 if bit == '0' else f1
+    fsk_signal[i*int(Fs/bit_rate):(i+1)*int(Fs/bit_rate)] = np.sin(2 * np.pi * frequency * t[i*int(Fs/bit_rate):(i+1)*int(Fs/bit_rate)])
+
+# Plotting
+plt.figure(figsize=(10, 6))
+
+plt.plot(t, fsk_signal)
+plt.title('FSK Signal')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
