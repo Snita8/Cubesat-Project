@@ -1,0 +1,29 @@
+import requests
+from skyfield.api import EarthSatellite, load
+
+# Example TLE data for the International Space Station (ISS)
+tle_data = """\
+1 25544U 98067A   21189.52413689  .00001562  00000-0  37977-4 0  9994
+2 25544  51.6456 183.7922 0004676  72.7372  49.4541 15.48972702406743
+"""
+
+# Define a function to parse TLE data and calculate satellite positions
+def parse_tle_and_compute_positions(tle_data):
+    # Load a time scale from Skyfield
+    ts = load.timescale()
+
+    # Parse the TLE data
+    lines = tle_data.strip().splitlines()
+    satellite = EarthSatellite(lines[1], lines[2], lines[0], ts)
+
+    # Compute satellite position and velocity
+    t = ts.now()
+    position = satellite.at(t).position.km
+    velocity = satellite.at(t).velocity.km_per_s
+
+    # Print results
+    print(f"Current position (km): {position}")
+    print(f"Current velocity (km/s): {velocity}")
+
+# Call the function with the example TLE data
+parse_tle_and_compute_positions(tle_data)
