@@ -2,6 +2,12 @@
 
 # Cubesat-Project 🛰️📡
 
+# ABSTRACT
+
+
+
+This summer internship explores CubeSat satellite communication, aiming to enhance capabilities through innovative antenna design, signal processing, and ground station integration. Participants will gain hands-on experience in designing and optimizing communication systems, with a focus on practical applications and advancing space technology.
+
 
 https://github.com/Snita8/Cubesat-Project/tree/main
 
