@@ -1,6 +1,7 @@
+# CUBESAT & SATELLITE COMMUNICATION 
+
 ![WhatsApp GIF 2024-07-10 at 19 51 30](https://github.com/Snita8/Cubesat-Project/assets/173747602/97d2f2c5-ab83-4b52-8983-9048ef419886)
 
-# Cubesat-Project 🛰️📡
 
 # **ABSTRACT🪄**
 
@@ -568,25 +569,33 @@ Ultraviolet, X-rays, Gamma Rays: Not used for communication due to their high en
 
 
 #### Carrier Frequency Selection
+
 *Carrier frequency selection is crucial for avoiding interference and ensuring efficient communication.*
 
  ##### Factors influencing the choice include:
 
  ✶ Bandwidth Requirements: Higher frequencies typically allow for higher data rates.
+ 
 ✶ Propagation Characteristics: Lower frequencies (below 30 MHz) can travel long distances and penetrate obstacles better than higher frequencies.
+
 ✶ Regulations: Regulatory bodies allocate different frequency bands for specific uses to minimize interference.
 
 #### Satellite Orbital Fundamentals 
 *Satellite orbits are paths that satellites follow around the Earth.*
 
 ##### Key concepts include:
+
 ✶ Low Earth Orbit (LEO): 160 to 2,000 km above Earth. Used for Earth observation and some communication satellites.
+
 ✶ Medium Earth Orbit (MEO): 2,000 to 35,786 km above Earth. Used for navigation satellites like GPS.
+
 ✶ Geostationary Orbit (GEO): 35,786 km above Earth. Satellites here remain stationary relative to a point on Earth, used for communication and weather monitoring.
+
 ✶ Inclination: The angle between the satellite's orbital plane and the equatorial plane.
+
 ✶ Eccentricity: Describes the shape of the orbit; a measure of how much it deviates from a perfect circle.
 
-## 
+## Cubesat Pay-Load & Architecture 📖
 
 ![WhatsApp Image 2024-07-10 at 20 02 35](https://github.com/Snita8/Cubesat-Project/assets/173747602/d1fa63f8-84ca-454f-8cab-a3353030c3af)
 
