@@ -586,7 +586,7 @@ Ultraviolet, X-rays, Gamma Rays: Not used for communication due to their high en
 ✶ Inclination: The angle between the satellite's orbital plane and the equatorial plane.
 ✶ Eccentricity: Describes the shape of the orbit; a measure of how much it deviates from a perfect circle.
 
-
+## 
 
 ![WhatsApp Image 2024-07-10 at 20 02 35](https://github.com/Snita8/Cubesat-Project/assets/173747602/d1fa63f8-84ca-454f-8cab-a3353030c3af)
 
