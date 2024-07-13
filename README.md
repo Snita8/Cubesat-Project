@@ -2,7 +2,7 @@
 
 # Cubesat-Project 🛰️📡
 
-# **ABSTRACT🪄 **
+# **ABSTRACT🪄**
 
 
 
