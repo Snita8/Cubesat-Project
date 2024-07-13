@@ -1,4 +1,4 @@
-# CUBESAT & SATELLITE COMMUNICATION 
+# CUBESAT & SATELLITE COMMUNICATION 🛰️📡
 
 ![WhatsApp GIF 2024-07-10 at 19 51 30](https://github.com/Snita8/Cubesat-Project/assets/173747602/97d2f2c5-ab83-4b52-8983-9048ef419886)
 
